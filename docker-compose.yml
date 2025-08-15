@@ -20,3 +20,4 @@ services:
 networks:
   default:
     driver: bridge # Use default bridge network
+    # This network connects all services with a default communication channel.
