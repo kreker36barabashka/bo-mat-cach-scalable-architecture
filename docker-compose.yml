@@ -2,17 +2,17 @@ version: '3.8'
 services:
   frontend:
     build:
-      context: ./frontend
+      context: ./frontend # Frontend service build context
     ports:
-      - '3000:3000'
+      - '3000:3000' # Expose port 3000 for frontend
 
   backend:
     build:
-      context: ./backend
+      context: ./backend # Backend service build context
     ports:
-      - '5000:5000'
+      - '5000:5000' # Expose port 5000 for backend
 
   mongo:
-    image: mongo
+    image: mongo # MongoDB service
     ports:
-      - '27017:27017'
+      - '27017:27017' # Expose port 27017 for MongoDB
