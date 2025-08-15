@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:18
 
 # Tạo thư mục ứng dụng
 WORKDIR /usr/src/app
