@@ -5,12 +5,16 @@ services:
       context: ./frontend # Frontend service build context
     ports:
       - '3000:3000' # Expose port 3000 for frontend
+    depends_on:
+      - backend # Ensure backend service starts before frontend
 
   backend:
     build:
       context: ./backend # Backend service build context
     ports:
       - '5000:5000' # Expose port 5000 for backend
+    depends_on:
+      - mongo # Ensure mongo service starts before backend
 
   mongo:
     image: mongo # MongoDB service
