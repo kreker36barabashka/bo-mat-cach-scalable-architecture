@@ -1,14 +1,16 @@
-FROM node:14
+FROM node:16
 
-# Create app directory
+# Tạo thư mục ứng dụng
 WORKDIR /usr/src/app
 
-# Install app dependencies
+# Cài đặt các phụ thuộc của ứng dụng
 COPY package*.json ./
 RUN npm install
 
-# Bundle app source
+# Đưa mã nguồn của ứng dụng vào container
 COPY . .
 
+# Mở cổng 3000 cho ứng dụng
 EXPOSE 3000
+# Chạy ứng dụng
 CMD [ "npm", "start" ]
